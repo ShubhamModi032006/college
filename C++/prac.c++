@@ -231,11 +231,9 @@
 //     {
 //         cout << nums << " ";
 //     }
-    
+
 //     return 0;
 // }
-
-
 
 // #include<iostream>
 // using namespace std;
@@ -260,15 +258,12 @@
 //             k++;
 //         }
 //     }
-    
 
 //     for(int num : arr){
 //         cout << num << " ";
 //     }
 //     return 0;
 // }
-
-
 
 // #include <iostream>
 // using namespace std;
@@ -298,25 +293,63 @@
 //     return 0;
 // }
 
+// #include<iostream>
+// using namespace std;
+// #include<map>
 
+// int main(){
+//     int arr[] = {-1,2,-1,3,2};
+//     int n = sizeof(arr)/sizeof(arr[0]);
+//     map<int , int> freq;
+//     for(int i=0;i<n;i++){
+//         freq[arr[i]]++;
+//     }
 
+//     for(auto pair : freq){
+//         if(pair.second == 1){
+//             cout << "first non reapting num : " << pair.first  << endl;
+//         }
+//     }
+// }
 
-
-#include<iostream>
+#include <iostream>
 using namespace std;
-#include<map>
 
-int main(){
-    int arr[] = {-1,2,-1,3,2};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    map<int , int> freq;
-    for(int i=0;i<n;i++){
-        freq[arr[i]]++;
-    }
+int main() {
+    int n = 8;
 
-    for(auto pair : freq){
-        if(pair.second == 1){
-            cout << "first non reapting num : " << pair.first  << endl;
+    // Upper part
+    for(int i = 0; i <= n/2; i++){
+        for(int j = n - i; j > 0; j--){
+            cout << " ";
         }
+
+        for(int h = 0; h <= i; h++){
+            cout << "*";
+        }
+
+        for(int h = 0; h <= i - 1; h++){
+            cout << "*";
+        }
+
+        cout << endl;
     }
+
+    // Lower part
+    for(int i = n/2; i > 0; i--){
+        for(int s = 0; s <= (n/2) - i; s++){
+            cout << " ";
+        }
+
+        for(int j = 0; j < i; j++){
+            cout << "*";
+        }
+
+        for(int j = 0; j < i - 1; j++){
+            cout << "*";
+        }
+
+        cout << endl;
+    }
+    return 0;
 }

@@ -90,7 +90,7 @@
 #include <iomanip>
 using namespace std;
 
-struct Node {
+class Node {
     int data;
     Node* left;
     Node* right;
@@ -156,22 +156,7 @@ void levelOrder(Node* root) {
     }
 }
 
-// Pretty-print tree (rotated 90 degrees)
-void printTree(Node* root, int space = 0, int gap = 6) {
-    if (root == NULL) return;
 
-    space += gap;
-
-    // Print right subtree first
-    printTree(root->right, space);
-
-    cout << endl;
-    for (int i = gap; i < space; i++) cout << " ";
-    cout << root->data << "\n";
-
-    // Print left subtree
-    printTree(root->left, space);
-}
 
 int main() {
     Node* root = NULL;

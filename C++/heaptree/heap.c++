@@ -1,40 +1,36 @@
 // Online C++ compiler to run C++ program online
 #include <iostream>
 using namespace std;
-#include<vector>
+#include <vector>
 
-
-int main() {
+int main()
+{
     int arr[] = {10, 2, 4, 3, 5, 8, 6};
     int size = sizeof(arr) / sizeof(arr[0]);
-    
+
     vector<int> ans;
     ans.push_back(0);
-    
-        
-        for (int j = 0; j < size; j++) {
+
+    for (int j = 0; j < size; j++)
+    {
         ans.push_back(arr[j]);
         int i = ans.size() - 1;
 
-        // Bubble up for min-heap property
-        while (i > 1 && ans[i] > ans[i / 2]) {
+        // Bubble up for max-heap property
+        while (i > 1 && ans[i] > ans[i / 2])
+        {
             swap(ans[i], ans[i / 2]);
             i = i / 2;
         }
     }
 
-        
-         for (int i=1;i<ans.size();i++) { 
-             cout << ans[i] << " "; 
-         } 
-        
-    
-    
+    for (int i = 1; i < ans.size(); i++)
+    {
+        cout << ans[i] << " ";
+    }
 
-    
     return 0;
 }
-
 
 // #include <iostream>
 // #include <vector>
