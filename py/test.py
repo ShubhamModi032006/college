@@ -315,5 +315,112 @@ a = "----helllo world-----------"
 
 
 
+ 
+# class Bank_info :
+#     ac_number = 1521542121
+#     def __init__(self, name, balance):
+#         self.name = name
+#         self.ac_num = self.ac_number
+#         self.__balance = balance
+#         Bank_info.ac_number += 1
+    
+#     @property
+#     def get_balance(self):
+#         return self.__balance;
+
+
+# user1 = Bank_info("shubham", 1000)
+
+# print(user1.ac_number)
+# print(user1.get_balance) 
+# user2 = Bank_info("rahul", 2000)
+# print(user2.ac_number)
+    
+
+
+
+
+
+# class Student:
+#     def __init__(self, name, roll_number, **kwargs):
+#         self.name = name
+#         self.roll_number = roll_number
+#         super().__init__(**kwargs)
+        
+
+# class Employee:
+#     def __init__(self, employee_id, **kwargs):
+#         self.employee_id = employee_id
+#         super().__init__(**kwargs)
+
+
+# class TA(Student, Employee):
+#     def __init__(self, name, roll_number, employee_id):
+#         super().__init__(name=name, roll_number=roll_number, employee_id=employee_id)
+
+#     def display(self):
+#         print("Name:", self.name)
+#         print("Roll Number:", self.roll_number)
+#         print("Employee ID:", self.employee_id)
+
+# ta = TA("Shubham,", 5, "E15453")
+# ta.display()
+
+
+
+
+
+
+
+# class Car :
+#     def __init__(self, model, make, year):
+#         self.model = model
+#         self.make = make
+#         self.year = year
+    
+#     def display(self):
+#         print(f"Model: {self.model}, Make: {self.make}, Year: {self.year}")
+
+
+
+# class Person:
+#     species = "Homo sapiens" # Class variable 
+
+#     def __init__(self, name):
+#         self.name = name # Instance variable
+
+# p1 = Person("Alice")
+# p2 = Person("Bob")
+
+
+# class Circle:
+#     pi = 3.14159
+
+#     def __init__(self, r):
+#         self.radius = r
+
+#     def area(self):
+#         return self.pi * (self.radius ** 2)
+
+#     def perimeter(self):
+#         return 2 * self.pi * self.radius
+    
+
+
+# class person:
+#     def __init__(self) :
+#         self.name = self.name
+
+
+
+
+
+
+
+
+
+
+
+
 
 
