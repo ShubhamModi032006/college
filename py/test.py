@@ -419,8 +419,42 @@ a = "----helllo world-----------"
 
 
 
+# import math
+from math import sin as s, pi
+
+print(s(pi / 2))
+# print(math.sqrt(4))
+# print(math.pow(2,2))
+# print(math.floor(2.55))
+# print(math.log(4))
+# print(math.pi)
+# print(math.e)
+
+
+
+# import random
+# import random as r
+
+# # print(random.random())
+# # print(random.randint(1, 100))
+# random.seed(1)
+# print(random.choice((1,2,3,4,5)))
+
+# print()
 
 
 
 
 
+# from datetime import datetime
+
+# now = datetime.now()
+
+# print(now.strftime("%a %d %b %I:%M %p"))
+
+
+
+
+import os
+
+os.rmdir("/home/sm/Desktop/college/py/creating_with_os")
