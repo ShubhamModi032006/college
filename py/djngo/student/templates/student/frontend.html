@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #f5f5f5;
+            --muted: #b7b7b7;
+            --border: #2f2f2f;
+            --accent: #ff8a00;
+            --accent-2: #2f7cff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 24px;
+            display: grid;
+            place-items: center;
+        }
+
+        .card {
+            width: min(100%, 700px);
+            background: linear-gradient(135deg, #0f0f0f 0%, #181818 100%);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 12px;
+            border: 1px solid var(--accent-2);
+            color: var(--accent-2);
+            border-radius: 999px;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+        }
+
+        .accent { color: var(--accent); }
+
+        p {
+            color: var(--muted);
+            margin: 0 0 20px;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .empty {
+            border: 1px dashed var(--border);
+            padding: 20px;
+            text-align: center;
+            color: var(--muted);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="tag">Student Dashboard</div>
+        <h1>Student <span class="accent">Names</span></h1>
+        <p>Click any student name to open their full details.</p>
+
+        {% if students %}
+            <ul>
+                {% for student in students %}
+                    <li>
+                        <a href="{% url 'std_detail' student.id %}">{{ student.name|upper }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="empty">No student data found yet.</div>
+        {% endif %}
+    </div>
+</body>
+</html>

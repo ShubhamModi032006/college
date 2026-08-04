@@ -1,30 +1,29 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 
+from .models import Student
+
+
 def home(request):
-    return HttpResponse("<h1>hello world</h1>")
+    students = Student.objects.all().order_by('name')
+    return render(request, 'student/frontend.html', {'students': students})
 
 
 def about(request):
     return HttpResponse("About Me")
 
-students = ["nothing", "nothing", "nothing"]
 
 def std_list(request):
-    result = "<h1> std list </h1>"
-    result += "<ul>"
-
-    for idx, std in enumerate(students):
-        result += f'<li>{idx} : {std}</li>'
-
-    result += "</ul>"
-    return HttpResponse(result)
+    students = Student.objects.all().order_by('name')
+    return render(request, 'student/frontend.html', {'students': students})
 
 
 def std_detail(request, std_id):
-    if 0 <= std_id < len(students) :
-        name = students[std_id]
-        return HttpResponse(f"<h1> student detail : </h1> <p> ID: {std_id} || name : {name}</p>")
-    else: 
-        return HttpResponse("<h1>ERORR STD NOT FOUND</h1>", status = 404)    
+    student = Student.objects.all().order_by('id');
+    for balak in student:
+        if balak.id == std_id:
+            student = balak
+            break
+        
+    return render(request, 'student/student_detail.html', {'student': student})
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student.name }} Details</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --text: #f5f5f5;
+            --muted: #b7b7b7;
+            --border: #2f2f2f;
+            --accent: #ff8a00;
+            --accent-2: #2f7cff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 24px;
+            display: grid;
+            place-items: center;
+        }
+
+        .card {
+            width: min(100%, 600px);
+            background: linear-gradient(135deg, #0f0f0f 0%, #181818 100%);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 12px;
+            border: 1px solid var(--accent-2);
+            color: var(--accent-2);
+            border-radius: 999px;
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        h1 { margin: 0 0 8px; }
+        .accent { color: var(--accent); }
+        p { color: var(--muted); line-height: 1.7; }
+
+        .info {
+            margin-top: 16px;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        a {
+            color: var(--accent-2);
+            text-decoration: none;
+            margin-top: 16px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="tag">Student Profile</div>
+        <h1><span class="accent">{{ student.name }}</span></h1>
+        <p>Here are the details for this student.</p>
+
+        <div class="info">
+            <p><strong>ID:</strong> {{ student.id }}</p>
+            <p><strong>Age:</strong> {{ student.age }}</p>
+            <p><strong>Email:</strong> {{ student.mail }}</p>
+        </div>
+
+        <a href="{% url 'std_list' %}">Back to student list</a>
+    </div>
+</body>
+</html>
